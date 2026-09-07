@@ -1,0 +1,202 @@
+<!doctype html><html lang="pt-BR"><head><meta charset="utf-8"><meta name="color-scheme" content="light only"><title>W18K · Tipografia · Repasse</title><style>
+:root{color-scheme:light only;--ink:#1c1a17;--ink2:#5c5750;--ink3:#8a847b;--line:#e6e1d9;--bg:#ffffff;--panel:#fbf9f5;--gold:#a8862c;--gold2:#c9a94a;--goldbg:#f7f0dd}
+*{box-sizing:border-box}
+html,body{margin:0;background:#fff;color:var(--ink);-webkit-print-color-adjust:exact;print-color-adjust:exact}
+body{font-family:"SF Pro Text",-apple-system,system-ui,sans-serif;font-size:12.5px;line-height:1.5;font-variant-numeric:tabular-nums}
+@page{size:A4;margin:0}
+.page{width:794px;height:1123px;overflow:hidden;position:relative;page-break-after:always;padding:56px 60px}
+.page:last-child{page-break-after:auto}
+.foot{position:absolute;left:60px;right:60px;bottom:28px;display:flex;justify-content:space-between;font-size:9.5px;color:var(--ink3);letter-spacing:.08em;text-transform:uppercase}
+.kicker{font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);font-weight:600;margin-bottom:8px}
+h1{font-family:"SF Pro Display";font-weight:600;font-size:34px;line-height:1.1;margin:0 0 14px;letter-spacing:-.01em}
+h2{font-family:"SF Pro Display";font-weight:600;font-size:20px;margin:0 0 10px;letter-spacing:-.01em}
+h3{font-family:"SF Pro Text";font-weight:600;font-size:13px;margin:18px 0 6px}
+p{margin:0 0 10px;color:var(--ink2);font-size:13px}
+p b,li b{color:var(--ink)}
+ul,ol{margin:0 0 10px 18px;padding:0;color:var(--ink2);font-size:13px}
+li{margin-bottom:4px}
+.box{background:var(--panel);border:1px solid var(--line);border-left:4px solid var(--gold);padding:14px 18px;border-radius:8px;margin:14px 0}
+table{border-collapse:collapse;width:100%;font-size:12px}
+td,th{padding:6px 8px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}
+th{font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink3);font-weight:600}
+.r{text-align:right}
+.tag{display:inline-block;font-size:9.5px;letter-spacing:.06em;text-transform:uppercase;font-weight:600;padding:2px 7px;border-radius:999px;background:var(--goldbg);color:var(--gold)}
+pre{font-family:"SF Mono",ui-monospace,monospace;font-size:10.2px;line-height:1.45;margin:0;background:var(--panel);border:1px solid var(--line);border-radius:8px;padding:12px 14px;white-space:pre;overflow:hidden}
+code{font-family:"SF Mono",ui-monospace,monospace;font-size:11px}
+.meta{display:grid;grid-template-columns:1fr 1fr;gap:6px 20px;margin-top:22px;font-size:12px}
+.meta div span{display:block;font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink3);font-weight:600}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+/* header strips */
+.stack{position:relative;background:#fff;border:1px solid var(--line);border-radius:10px;overflow:hidden;margin:10px 0 6px}
+.strip{display:flex;height:84px;border-bottom:1px solid var(--line)}
+.strip:last-of-type{border-bottom:0}
+.sside{width:96px;background:#1e1b17;padding:12px 8px;display:flex;flex-direction:column;gap:2px}
+.sside span{font-size:9px;color:#b9b1a2;padding:3px 7px;border-radius:5px}
+.sside span.on{background:rgba(255,255,255,.08);color:#fff;font-weight:600}
+.smain{flex:1;min-width:0}
+.stop{height:22px;border-bottom:1px solid var(--line);background:var(--panel)}
+.sbody{padding:10px 24px 0}
+.ttl{font-family:"SF Pro Display";font-weight:600;letter-spacing:-.01em;height:32px;line-height:32px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.ttl.l1{font-size:26px}.ttl.l2{font-size:20px}
+.sub{font-size:12px;color:var(--ink3);height:18px;line-height:18px;white-space:nowrap}
+.guide{position:absolute;top:0;bottom:0;left:120px;border-left:1.5px dashed var(--gold)}
+</style></head><body><section class="page">
+<div class="kicker">W18K · Sistema interno</div>
+<h1>Nova tipografia do sistema<br>SF Pro com números tabulares</h1>
+<p>Documento de repasse para quem mantém o código do sistema da W18K. Reúne a decisão, a regra completa, o CSS pronto, os passos de implementação e o checklist de aceite. Vale para toda tela nova e para toda tela existente que for alterada.</p>
+<div class="meta">
+<div><span>Decisão</span>SF Pro (Display e Text) com números tabulares; SF Mono só em códigos</div>
+<div><span>Data</span>7 de setembro de 2026</div>
+<div><span>Decidido por</span>Paulo Dumont, CEO</div>
+<div><span>Escopo</span>Sistema interno (app). Site e materiais de cliente fora deste repasse</div>
+</div>
+<div class="box"><b>Resumo em três linhas.</b><br>
+1. Trocar a fonte do sistema para a pilha SF Pro, com reserva Inter fora da Apple.<br>
+2. Ligar números tabulares em tudo: KPI, tabela, preço, peso, data e campo.<br>
+3. Um tamanho por nível de título e o bloco do título sempre na mesma posição, em todas as telas.</div>
+<h3>O que vem junto com este documento</h3>
+<ul>
+<li><b>w18k-typography.css</b>: variáveis e classes prontas para colar no projeto.</li>
+<li><b>w18k-apple-fonts.pdf</b>: comparativo visual com as telas de Dashboard, Produto, Cliente e Novo cliente na nova tipografia.</li>
+<li><b>w18k-typography-rules.md</b>: a mesma regra em texto, para guardar no repositório.</li>
+</ul>
+<h3>Por que essa escolha</h3>
+<ul>
+<li>SF Pro é a fonte nativa de iPhone, iPad e Mac. No aparelho da Apple não carrega nada e renderiza igual ao sistema operacional.</li>
+<li>Os números tabulares têm todos a mesma largura. Colunas de preço e peso ficam alinhadas e 1, l e I, e 0 e O, não se confundem.</li>
+<li>SF Pro Display foi desenhada para tamanhos grandes (títulos, KPI) e SF Pro Text para tamanhos pequenos (corpo, tabela). Mesma família, dois desenhos.</li>
+<li>New York (serifa da Apple) e SF Pro Rounded foram avaliadas e descartadas para o sistema operacional do dia a dia.</li>
+</ul>
+<div class="foot"><span>W18K · Tipografia · Repasse para implementação</span><span>01</span></div></section><section class="page">
+<div class="kicker">Regra · parte 1</div>
+<h2>Famílias e reserva</h2>
+<table><tr><th>Uso</th><th>Fonte</th><th>Pilha CSS</th></tr>
+<tr><td>Títulos e valores em destaque</td><td>SF Pro Display</td><td><code>-apple-system, "SF Pro Display", "Inter", system-ui, sans-serif</code></td></tr>
+<tr><td>Corpo, tabelas, campos, botões</td><td>SF Pro Text</td><td><code>-apple-system, "SF Pro Text", "Inter", system-ui, sans-serif</code></td></tr>
+<tr><td>SKU, número de pedido, certificado</td><td>SF Mono</td><td><code>ui-monospace, "SF Mono", "JetBrains Mono", monospace</code></td></tr></table>
+<div class="box"><b>Licença.</b> As fontes da Apple só podem ser usadas nos aparelhos da Apple. Não copiar arquivos .otf ou .ttf da SF Pro para o projeto. No Windows e no Android o sistema cai para a Inter (gratuita, Google Fonts), que é a mais parecida. Se o projeto já carrega Google Fonts, adicionar Inter nos pesos 400, 500 e 600. Se não carrega nada, deixar só a pilha acima.</div>
+<p><code>font-variant-numeric: tabular-nums</code> ligado no <code>body</code>. Nunca desligar em tabela, KPI, preço, peso, data ou campo.</p>
+
+<h2 style="margin-top:22px">Escala: um tamanho por nível</h2>
+<table><tr><th></th><th>Nível</th><th>Onde</th><th>Fonte</th><th class="r">Peso</th><th class="r">Tamanho</th></tr><tr><td><span class="tag">T1</span></td><td><b>Título de módulo</b></td><td style="color:var(--ink2)">Dashboard, Products, Customers, Orders, Inventory, Reports</td><td>SF Pro Display</td><td class="r">600</td><td class="r">26 px</td></tr><tr><td><span class="tag">T2</span></td><td><b>Título de página interna</b></td><td style="color:var(--ink2)">Detalhe de produto, cliente, pedido; cadastro e edição</td><td>SF Pro Display</td><td class="r">600</td><td class="r">20 px</td></tr><tr><td><span class="tag">T3</span></td><td><b>Título de caixa ou seção</b></td><td style="color:var(--ink2)">Recent orders, Specifications, Identity, Address</td><td>SF Pro Text</td><td class="r">600</td><td class="r">13 px</td></tr><tr><td><span class="tag">T4</span></td><td><b>Rótulo em caixa alta</b></td><td style="color:var(--ink2)">Cabeçalho de tabela, rótulo de KPI, rótulo de ficha</td><td>SF Pro Text</td><td class="r">600</td><td class="r">10 px · +0,08 em</td></tr><tr><td><span class="tag">V</span></td><td><b>Valor em destaque</b></td><td style="color:var(--ink2)">KPI, preço, total</td><td>SF Pro Display</td><td class="r">600</td><td class="r">22 px</td></tr><tr><td><span class="tag">B</span></td><td><b>Corpo</b></td><td style="color:var(--ink2)">Texto, tabela, campo, botão</td><td>SF Pro Text</td><td class="r">400 / 600</td><td class="r">13 px</td></tr><tr><td><span class="tag">S</span></td><td><b>Sublinha</b></td><td style="color:var(--ink2)">Breadcrumb, data, meta abaixo do título</td><td>SF Pro Text</td><td class="r">400</td><td class="r">12 px</td></tr><tr><td><span class="tag">C</span></td><td><b>Código</b></td><td style="color:var(--ink2)">SKU, pedido, certificado</td><td>SF Mono</td><td class="r">400</td><td class="r">11 px</td></tr></table>
+<p style="margin-top:10px">Cada elemento do sistema cai em exatamente um nível. Não existe título de 24 px, nem rótulo de 11 px, nem valor de 28 px. Se uma tela precisar de algo fora da escala, é a escala que muda, para todas as telas.</p>
+<div class="foot"><span>W18K · Tipografia · Repasse para implementação</span><span>02</span></div></section><section class="page">
+<div class="kicker">Regra · parte 2</div>
+<h2>Posição do título: sempre no mesmo lugar</h2>
+<p>Ao trocar de página o título não pode "se mover". Módulo em 26 px, página interna em 20 px, os dois dentro do mesmo bloco fixo.</p>
+<ul>
+<li>O bloco do título começa a <b>24 px</b> da borda do conteúdo e <b>20 px</b> abaixo da barra superior.</li>
+<li>Altura fixa: <b>32 px</b> para o título (line-height 32 px) e <b>18 px</b> para a sublinha. A sublinha vem sempre abaixo do título, mesmo quando é só um breadcrumb.</li>
+<li>Avatar, preço, chips de status e botões de ação ficam <b>à direita</b> do bloco e nunca empurram o título para baixo ou para o lado.</li>
+<li>Nada acima do título além da barra superior. Breadcrumb vai na sublinha, não em cima.</li>
+</ul>
+<div class="stack"><div class="strip"><div class="sside"><span class="on">Dashboard</span><span class="">Products</span><span class="">Customers</span></div><div class="smain"><div class="stop"></div><div class="sbody"><div class="ttl l1">Dashboard</div><div class="sub">Monday, 7 September 2026 · São Paulo Flagship</div></div></div></div><div class="strip"><div class="sside"><span class="">Dashboard</span><span class="on">Products</span><span class="">Customers</span></div><div class="smain"><div class="stop"></div><div class="sbody"><div class="ttl l1">Products</div><div class="sub">1.248 items · 22 low stock</div></div></div></div><div class="strip"><div class="sside"><span class="">Dashboard</span><span class="on">Products</span><span class="">Customers</span></div><div class="smain"><div class="stop"></div><div class="sbody"><div class="ttl l2">Diamond Solitaire Ring 0.50 ct</div><div class="sub">Products / Rings · W18K-RG-00417</div></div></div></div><div class="strip"><div class="sside"><span class="">Dashboard</span><span class="">Products</span><span class="on">Customers</span></div><div class="smain"><div class="stop"></div><div class="sbody"><div class="ttl l2">New customer</div><div class="sub">Customers / New</div></div></div></div><div class="guide"></div></div>
+<p style="font-size:11.5px;color:var(--ink3)">Linha tracejada: mesma posição horizontal do título e da sublinha nas quatro telas. As duas primeiras são módulos (T1), as duas últimas são páginas internas (T2).</p>
+
+<h3>Como classificar cada tela</h3>
+<table><tr><th>T1 · Módulo</th><th>T2 · Página interna</th></tr>
+<tr><td>Dashboard</td><td>Detalhe de produto, cliente, pedido</td></tr>
+<tr><td>Products (lista)</td><td>Novo produto, editar produto</td></tr>
+<tr><td>Customers (lista)</td><td>Novo cliente, editar cliente</td></tr>
+<tr><td>Orders, Inventory, Reports (lista)</td><td>Novo pedido, detalhe de relatório, configurações</td></tr></table>
+
+<h3>Regras de tela já vigentes na W18K</h3>
+<ul>
+<li><code>color-scheme: light only</code> em todo HTML.</li>
+<li>Nunca azul como cor de fonte.</li>
+<li>Sem texto explicativo em título de caixa ou embaixo de campo.</li>
+</ul>
+<div class="foot"><span>W18K · Tipografia · Repasse para implementação</span><span>03</span></div></section><section class="page">
+<div class="kicker">CSS pronto</div>
+<h2>w18k-typography.css</h2>
+<p>Arquivo anexo. Colar no ponto onde o projeto define tema ou tokens. Se o projeto usa Tailwind, levar os mesmos valores para <code>theme.fontFamily</code> e <code>theme.fontSize</code> em vez de classes soltas.</p>
+<pre>/* W18K · Typography tokens · SF Pro with tabular numbers */
+:root {
+  color-scheme: light only;
+  --font-text: -apple-system, &quot;SF Pro Text&quot;, &quot;Inter&quot;, system-ui, sans-serif;
+  --font-display: -apple-system, &quot;SF Pro Display&quot;, &quot;Inter&quot;, system-ui, sans-serif;
+  --font-mono: ui-monospace, &quot;SF Mono&quot;, &quot;JetBrains Mono&quot;, monospace;
+
+  --t1-size: 26px; /* module title */
+  --t2-size: 20px; /* inner page title */
+  --t3-size: 13px; /* box / section title */
+  --t4-size: 10px; /* uppercase label */
+  --value-size: 22px; /* KPI, price, total */
+  --body-size: 13px;
+  --sub-size: 12px;
+  --code-size: 11px;
+
+  --title-block-height: 32px;
+  --sub-block-height: 18px;
+  --title-offset-x: 24px;
+  --title-offset-y: 20px;
+}
+
+body {
+  font-family: var(--font-text);
+  font-size: var(--body-size);
+  font-variant-numeric: tabular-nums;
+  -webkit-font-smoothing: antialiased;
+}
+
+.title-block { padding: var(--title-offset-y) var(--title-offset-x) 0; }
+.title-block .title,
+.title-block .subtitle { white-space: nowrap; margin: 0; }
+.title-block .title {
+  font-family: var(--font-display);
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  height: var(--title-block-height);
+  line-height: var(--title-block-height);
+}
+.title-block .title.module { font-size: var(--t1-size); }
+.title-block .title.page   { font-size: var(--t2-size); }
+.title-block .subtitle {
+  font-size: var(--sub-size);
+  height: var(--sub-block-height);
+  line-height: var(--sub-block-height);
+}
+
+.section-title { font-family: var(--font-text); font-weight: 600; font-size: var(--t3-size); }
+.label {
+  font-family: var(--font-text); font-weight: 600; font-size: var(--t4-size);
+  letter-spacing: 0.08em; text-transform: uppercase;
+}
+.value {
+  font-family: var(--font-display); font-weight: 600;
+  font-size: var(--value-size); letter-spacing: -0.01em;
+}
+.code, .sku, .order-id, .certificate {
+  font-family: var(--font-mono); font-size: var(--code-size);
+}
+table td, table th, input, .kpi, .price { font-variant-numeric: tabular-nums; }
+</pre>
+<div class="foot"><span>W18K · Tipografia · Repasse para implementação</span><span>04</span></div></section><section class="page">
+<div class="kicker">Implementação</div>
+<h2>Passos para quem vai aplicar</h2>
+<ol>
+<li><b>Localizar onde a fonte está definida hoje.</b> Google Fonts no HTML, arquivo de fonte local, <code>fontFamily</code> do Tailwind ou variável CSS. Anotar antes de mexer.</li>
+<li><b>Centralizar em tokens.</b> Criar as variáveis do arquivo anexo num único lugar e apontar tudo para elas. Não espalhar valores de px pelas telas.</li>
+<li><b>Trocar a família.</b> Substituir a pilha antiga pela SF Pro e remover a carga da fonte antiga. Adicionar Inter como reserva só se o projeto já usa Google Fonts.</li>
+<li><b>Ligar os números tabulares no body.</b> Conferir se algum componente (tabela, input, gráfico) sobrescreve <code>font-variant-numeric</code> e corrigir.</li>
+<li><b>Mapear os títulos.</b> Listar todas as telas e marcar cada uma como T1 ou T2 pela tabela da página 3. Aplicar 26 px ou 20 px, nada intermediário.</li>
+<li><b>Fixar o bloco do título.</b> Um único componente de cabeçalho de página, com as medidas da página 3, usado por todas as telas. Mover avatar, preço e ações para a direita do bloco.</li>
+<li><b>Unificar o resto da escala.</b> Rótulos em caixa alta em 10 px, títulos de caixa em 13 px, valores em destaque em 22 px, códigos em SF Mono 11 px.</li>
+<li><b>Rodar lint, build e testes</b> antes de subir. Subir em branch separado, não direto em produção.</li>
+<li><b>Conferir em três aparelhos:</b> um iPhone ou Mac (SF Pro nativa), um Windows (reserva Inter) e um Android (reserva Inter).</li>
+</ol>
+
+<h2 style="margin-top:20px">Checklist de aceite</h2>
+<table><tr><th style="width:26px"></th><th>Item</th><th class="r">Como verificar</th></tr>
+<tr><td>☐</td><td>Nenhum arquivo de fonte da Apple dentro do projeto</td><td class="r">buscar .otf e .ttf no repositório</td></tr>
+<tr><td>☐</td><td>Fonte antiga não é mais carregada</td><td class="r">aba Network do navegador</td></tr>
+<tr><td>☐</td><td>Números tabulares em KPI, tabela, preço, peso, data e campo</td><td class="r">coluna de preços alinhada à direita sem "dançar"</td></tr>
+<tr><td>☐</td><td>Todo título de módulo em 26 px e toda página interna em 20 px</td><td class="r">inspecionar 5 telas de cada tipo</td></tr>
+<tr><td>☐</td><td>Título não se move ao trocar de página</td><td class="r">alternar Dashboard, Produto, Cliente, Novo cliente e observar o título</td></tr>
+<tr><td>☐</td><td>Rótulos em caixa alta todos em 10 px com espaçamento 0,08 em</td><td class="r">cabeçalho de tabela e rótulo de KPI</td></tr>
+<tr><td>☐</td><td>SKU, pedido e certificado em SF Mono</td><td class="r">tela de produto e lista de pedidos</td></tr>
+<tr><td>☐</td><td>Renderização correta em iPhone/Mac, Windows e Android</td><td class="r">foto das três telas</td></tr>
+<tr><td>☐</td><td>Sem azul como cor de fonte; sem texto explicativo embaixo de campo</td><td class="r">varredura visual</td></tr></table>
+
+<div class="box"><b>Entrega esperada:</b> branch com as alterações, lista das telas classificadas em T1 e T2, e três capturas (Apple, Windows, Android) da tela de Produto. Dúvidas sobre a regra voltam para o Paulo antes de improvisar.</div>
+<div class="foot"><span>W18K · Tipografia · Repasse para implementação</span><span>05</span></div></section></body></html>

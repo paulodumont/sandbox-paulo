@@ -50,6 +50,11 @@ body {
   font-family: var(--font-text); font-weight: 600; font-size: var(--t4-size);
   letter-spacing: 0.08em; text-transform: uppercase;
 }
-.value { font-family: var(--font-display); font-weight: 600; font-size: var(--value-size); letter-spacing: -0.01em; }
-.code, .sku, .order-id, .certificate { font-family: var(--font-mono); font-size: var(--code-size); }
+.value {
+  font-family: var(--font-display); font-weight: 600;
+  font-size: var(--value-size); letter-spacing: -0.01em;
+}
+.code, .sku, .order-id, .certificate {
+  font-family: var(--font-mono); font-size: var(--code-size);
+}
 table td, table th, input, .kpi, .price { font-variant-numeric: tabular-nums; }
