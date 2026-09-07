@@ -1,0 +1,55 @@
+/* W18K · Typography tokens · SF Pro with tabular numbers */
+:root {
+  color-scheme: light only;
+  --font-text: -apple-system, "SF Pro Text", "Inter", system-ui, sans-serif;
+  --font-display: -apple-system, "SF Pro Display", "Inter", system-ui, sans-serif;
+  --font-mono: ui-monospace, "SF Mono", "JetBrains Mono", monospace;
+
+  --t1-size: 26px; /* module title */
+  --t2-size: 20px; /* inner page title */
+  --t3-size: 13px; /* box / section title */
+  --t4-size: 10px; /* uppercase label */
+  --value-size: 22px; /* KPI, price, total */
+  --body-size: 13px;
+  --sub-size: 12px;
+  --code-size: 11px;
+
+  --title-block-height: 32px;
+  --sub-block-height: 18px;
+  --title-offset-x: 24px;
+  --title-offset-y: 20px;
+}
+
+body {
+  font-family: var(--font-text);
+  font-size: var(--body-size);
+  font-variant-numeric: tabular-nums;
+  -webkit-font-smoothing: antialiased;
+}
+
+.title-block { padding: var(--title-offset-y) var(--title-offset-x) 0; }
+.title-block .title,
+.title-block .subtitle { white-space: nowrap; margin: 0; }
+.title-block .title {
+  font-family: var(--font-display);
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  height: var(--title-block-height);
+  line-height: var(--title-block-height);
+}
+.title-block .title.module { font-size: var(--t1-size); }
+.title-block .title.page   { font-size: var(--t2-size); }
+.title-block .subtitle {
+  font-size: var(--sub-size);
+  height: var(--sub-block-height);
+  line-height: var(--sub-block-height);
+}
+
+.section-title { font-family: var(--font-text); font-weight: 600; font-size: var(--t3-size); }
+.label {
+  font-family: var(--font-text); font-weight: 600; font-size: var(--t4-size);
+  letter-spacing: 0.08em; text-transform: uppercase;
+}
+.value { font-family: var(--font-display); font-weight: 600; font-size: var(--value-size); letter-spacing: -0.01em; }
+.code, .sku, .order-id, .certificate { font-family: var(--font-mono); font-size: var(--code-size); }
+table td, table th, input, .kpi, .price { font-variant-numeric: tabular-nums; }
