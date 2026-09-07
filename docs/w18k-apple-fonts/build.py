@@ -48,14 +48,19 @@ table.cmp th{font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:v
 .screen .main{flex:1;display:flex;flex-direction:column;min-width:0}
 .screen .top{height:56px;border-bottom:1px solid var(--line);display:flex;align-items:center;padding:0 24px;gap:14px}
 .screen .top .search{flex:1;height:32px;border:1px solid var(--line);border-radius:8px;background:var(--warm);display:flex;align-items:center;padding:0 12px;font-size:12px;color:var(--ink3)}
-.screen .top .btn{height:32px;padding:0 14px;border-radius:8px;background:var(--ink);color:#fff;display:flex;align-items:center;font-size:12px;font-weight:600;font-family:var(--f-text)}
+.screen .top .btn{height:32px;padding:0 14px;border-radius:8px;background:var(--ink);color:#fff;display:flex;align-items:center;font-size:13px;font-weight:600;font-family:var(--f-text)}
 .screen .top .btn.ghost{background:transparent;color:var(--ink);border:1px solid var(--line)}
 .screen .body{padding:22px 24px;flex:1;overflow:hidden}
-.screen .ttl{font-family:var(--f-display);font-weight:600;font-size:26px;letter-spacing:-.01em;line-height:1.1;margin:0}
-.screen .sub{font-size:12px;color:var(--ink3);margin-top:4px}
-.screen .kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin:14px 0}
+.screen .hdr{display:flex;justify-content:space-between;align-items:flex-start;height:54px;margin-bottom:14px}
+.screen .ttl{font-family:var(--f-display);font-weight:600;letter-spacing:-.01em;margin:0;height:32px;line-height:32px;white-space:nowrap}
+.screen .ttl.l1{font-size:26px}
+.screen .ttl.l2{font-size:20px}
+.screen .sub{font-size:12px;color:var(--ink3);height:18px;line-height:18px;white-space:nowrap}
+.screen .sub .pill{vertical-align:1px}
+.screen .hdr .side-r{text-align:right;padding-top:2px}
+.screen .kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin:0 0 14px}
 .screen .kpi{border:1px solid var(--line);border-radius:10px;padding:12px 14px;background:var(--panel)}
-.screen .kpi .k{font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--ink3);font-weight:600}
+.screen .kpi .k{font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:var(--ink3);font-weight:600}
 .screen .kpi .v{font-family:var(--f-numdisp);font-weight:600;font-size:22px;white-space:nowrap;letter-spacing:-.01em;margin-top:6px;font-variant-numeric:tabular-nums;color:var(--ink)}
 .screen .kpi .d{font-size:11px;margin-top:4px;font-variant-numeric:tabular-nums}
 .screen .kpi .d.up{color:var(--green)}
@@ -79,9 +84,27 @@ table.cmp th{font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:v
 .screen .bars i{flex:1;display:block;background:var(--gold2);border-radius:3px 3px 0 0;opacity:.9}
 .screen .bars i.hi{background:var(--gold)}
 .screen .axis{display:flex;justify-content:space-between;padding:0 16px 10px;font-size:10px;color:var(--ink3);font-variant-numeric:tabular-nums}
+/* header strips (hierarchy page) */
+.stack{position:relative;background:var(--panel);border:1px solid var(--line);border-radius:10px;overflow:hidden}
+.strip{display:flex;height:104px;border-bottom:1px solid var(--line);font-family:var(--f-text)}
+.strip:last-of-type{border-bottom:0}
+.sside{width:110px;background:#1e1b17;padding:14px 10px;display:flex;flex-direction:column;gap:2px}
+.sside span{font-size:10px;color:#b9b1a2;padding:4px 8px;border-radius:5px}
+.sside span.on{background:rgba(255,255,255,.08);color:#fff;font-weight:600}
+.smain{flex:1;min-width:0}
+.stop{height:28px;border-bottom:1px solid var(--line);background:var(--warm)}
+.sbody{padding:12px 24px 0}
+.strip .ttl{font-family:var(--f-display);font-weight:600;letter-spacing:-.01em;margin:0;height:32px;line-height:32px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.strip .ttl.l1{font-size:26px}
+.strip .ttl.l2{font-size:20px}
+.strip .sub{font-size:12px;color:var(--ink3);height:18px;line-height:18px;white-space:nowrap}
+.guide{position:absolute;pointer-events:none;border:0 dashed var(--gold);opacity:.9}
+.guide.gx{top:0;bottom:0;left:134px;border-left-width:1.5px}
+.guide.gy{left:110px;right:0;top:0;height:0;border-top-width:0}
+.guide.gy2{left:110px;right:0;top:0;height:0;border-top-width:0}
 /* product */
 .screen .phead{display:flex;align-items:flex-start;justify-content:space-between;gap:20px}
-.screen .cols{display:grid;grid-template-columns:240px minmax(0,1fr) 270px;gap:14px;margin-top:14px}
+.screen .cols{display:grid;grid-template-columns:240px minmax(0,1fr) 270px;gap:14px;margin-top:0}
 .screen .img{height:210px;border-radius:10px;background:linear-gradient(135deg,#efe9dc,#e2d8c2);display:flex;align-items:center;justify-content:center;color:var(--gold);font-family:var(--f-display);font-size:14px;letter-spacing:.1em}
 .screen .thumbs{display:flex;gap:8px;margin-top:8px}
 .screen .thumbs i{flex:1;height:54px;border-radius:6px;background:#eee8dc;display:block}
@@ -89,16 +112,16 @@ table.cmp th{font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:v
 .screen dl div{padding:7px 0;border-bottom:1px solid var(--line)}
 .screen dt{font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:var(--ink3);font-weight:600}
 .screen dd{margin:3px 0 0;font-size:13px;font-variant-numeric:tabular-nums}
-.screen .price{font-family:var(--f-numdisp);font-weight:600;font-size:28px;white-space:nowrap;letter-spacing:-.01em;font-variant-numeric:tabular-nums}
+.screen .price{font-family:var(--f-numdisp);font-weight:600;font-size:22px;line-height:32px;white-space:nowrap;letter-spacing:-.01em;font-variant-numeric:tabular-nums}
 .screen .price small{font-family:var(--f-text);font-size:12px;font-weight:500;color:var(--ink3);letter-spacing:0;margin-left:6px}
 /* customer */
-.screen .avatar{width:56px;height:56px;border-radius:50%;background:var(--goldbg);color:var(--gold);display:flex;align-items:center;justify-content:center;font-family:var(--f-display);font-weight:600;font-size:20px}
+.screen .avatar{width:40px;height:40px;border-radius:50%;background:var(--goldbg);color:var(--gold);display:flex;align-items:center;justify-content:center;font-family:var(--f-display);font-weight:600;font-size:15px}
 .screen .chead{display:flex;align-items:center;gap:16px}
-.screen .meta{font-size:12px;color:var(--ink2);margin-top:3px;font-variant-numeric:tabular-nums}
+.screen .meta{font-size:12px;color:var(--ink2);font-variant-numeric:tabular-nums}
 .screen .meta b{color:var(--ink);font-weight:600}
 /* form */
-.screen .form{display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px 14px;margin-top:4px}
-.screen .fld label{display:block;font-size:11px;font-weight:600;color:var(--ink2);margin-bottom:3px;letter-spacing:.02em}
+.screen .form{display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px 14px;margin-top:0}
+.screen .fld label{display:block;font-size:12px;font-weight:500;color:var(--ink2);margin-bottom:3px}
 .screen .fld .in{height:30px;border:1px solid var(--line);border-radius:8px;background:#fff;display:flex;align-items:center;padding:0 12px;font-size:13px;color:var(--ink);font-variant-numeric:tabular-nums}
 .screen .fld .in.ph{color:var(--ink3)}
 .screen .fld.w2{grid-column:span 2}
@@ -138,7 +161,7 @@ def dashboard(t):
     pill = {"Paid":"ok","Pending":"wait","Shipped":"gray","Cancelled":"no"}
     tr = "".join(f'<tr><td class="mono">{o}</td><td>{c}</td><td>{p}</td><td class="r num">{v}</td><td><span class="pill {pill[s]}">{s}</span></td></tr>' for o,c,p,v,s in rows)
     return f'''<div class="screen" {theme_style(t)}>{side("Dashboard")}<div class="main">{top()}
-<div class="body"><div class="ttl">Good morning, Paulo</div><div class="sub">Monday, 7 September 2026 · Store: São Paulo Flagship</div>
+<div class="body"><div class="hdr"><div><div class="ttl l1">Dashboard</div><div class="sub">Monday, 7 September 2026 · São Paulo Flagship · Good morning, Paulo</div></div></div>
 <div class="kpis">
 <div class="kpi"><div class="k">Revenue · Sep</div><div class="v">R$ 148.920,00</div><div class="d up">+12,4% vs Aug</div></div>
 <div class="kpi"><div class="k">Orders</div><div class="v">312</div><div class="d up">+38 vs Aug</div></div>
@@ -155,8 +178,8 @@ def product(t):
     hist = [("07 Sep 2026","R$ 21.500,00","R$ 618,40"),("21 Aug 2026","R$ 20.900,00","R$ 604,10"),("03 Jul 2026","R$ 19.750,00","R$ 571,20"),("15 May 2026","R$ 19.750,00","R$ 566,90")]
     tr = "".join(f'<tr><td>{d}</td><td class="r num">{p}</td><td class="r num">{g}</td></tr>' for d,p,g in hist)
     return f'''<div class="screen" {theme_style(t)}>{side("Products")}<div class="main">{top("Save changes","Duplicate")}
-<div class="body"><div class="phead"><div><div class="ttl">Diamond Solitaire Ring 0.50 ct</div><div class="sub"><span class="mono">SKU W18K-RG-00417</span> &nbsp;·&nbsp; Rings &nbsp;·&nbsp; <span class="pill ok">Active</span></div></div>
-<div style="text-align:right"><div class="price">R$ 21.500,00<small>retail</small></div><div class="meta">Cost <b class="num">R$ 11.240,00</b> &nbsp;·&nbsp; Margin <b class="num">47,7%</b></div></div></div>
+<div class="body"><div class="hdr"><div><div class="ttl l2">Diamond Solitaire Ring 0.50 ct</div><div class="sub">Products / Rings &nbsp;·&nbsp; <span class="mono">W18K-RG-00417</span> &nbsp;·&nbsp; <span class="pill ok">Active</span></div></div>
+<div class="side-r"><div class="price">R$ 21.500,00<small>retail</small></div><div class="meta">Cost <b class="num">R$ 11.240,00</b> &nbsp;·&nbsp; Margin <b class="num">47,7%</b></div></div></div>
 <div class="cols">
 <div><div class="img">W18K</div><div class="thumbs"><i></i><i></i><i></i><i></i></div></div>
 <div class="box"><div class="bh">Specifications</div><div style="padding:4px 16px 10px"><dl>
@@ -175,7 +198,7 @@ def customer(t):
     pill = {"Paid":"ok","Pending":"wait"}
     tr = "".join(f'<tr><td class="mono">{o}</td><td class="num">{d}</td><td>{p}</td><td class="r num">{v}</td><td><span class="pill {pill[s]}">{s}</span></td></tr>' for o,d,p,v,s in rows)
     return f'''<div class="screen" {theme_style(t)}>{side("Customers")}<div class="main">{top("New order","Edit")}
-<div class="body"><div class="chead"><div class="avatar">RA</div><div><div class="ttl">Ricardo Almeida</div><div class="meta"><span class="num">+55 11 98765-4321</span> &nbsp;·&nbsp; ricardo.almeida@email.com &nbsp;·&nbsp; São Paulo, SP &nbsp;·&nbsp; <span class="pill wait">VIP</span></div></div></div>
+<div class="body"><div class="hdr"><div><div class="ttl l2">Ricardo Almeida</div><div class="sub">Customers / VIP &nbsp;·&nbsp; <span class="num">+55 11 98765-4321</span> &nbsp;·&nbsp; ricardo.almeida@email.com &nbsp;·&nbsp; São Paulo, SP</div></div><div class="avatar">RA</div></div>
 <div class="kpis">
 <div class="kpi"><div class="k">Lifetime value</div><div class="v">R$ 48.710,00</div><div class="d">5 orders</div></div>
 <div class="kpi"><div class="k">Average ticket</div><div class="v">R$ 9.742,00</div><div class="d up">Above store avg</div></div>
@@ -194,7 +217,7 @@ def form(t):
     def f(label, val="", ph=False, w=""):
         return f'<div class="fld {w}"><label>{label}</label><div class="in {"ph" if ph else ""}">{val}</div></div>'
     return f'''<div class="screen" {theme_style(t)}>{side("Customers")}<div class="main">{top("Save customer","Cancel")}
-<div class="body"><div class="ttl">New customer</div><div class="sub">Customers / New</div>
+<div class="body"><div class="hdr"><div><div class="ttl l2">New customer</div><div class="sub">Customers / New</div></div></div>
 <div class="form">
 <div class="sect first">Identity</div>
 {f("Full name","Mariana Costa Ferreira")}{f("CPF","987.654.321-00")}{f("Birth date","22 / 08 / 1986")}
@@ -271,7 +294,41 @@ pages.append(page(f'''
 <div class="rec" style="max-width:100%;margin-top:14px"><b>Para fixar mais legível:</b> SF Pro Text com <b>tabular-nums</b> em todas as tabelas e campos, peso Medium 500 nos valores; SF Pro Display Semibold 600 nos KPIs e preços em destaque; SF Mono só em códigos. Rounded fica menos preciso em joalheria e New York, apesar de bonita, perde clareza em tabelas densas.</div>
 ''', "03"))
 
-n = 4
+
+def strip(t, level, title, sub, active):
+    return f"""<div class="strip" {theme_style(t)}><div class="sside"><span class="{'on' if active=='Dashboard' else ''}">Dashboard</span><span class="{'on' if active=='Products' else ''}">Products</span><span class="{'on' if active=='Customers' else ''}">Customers</span></div>
+<div class="smain"><div class="stop"></div><div class="sbody"><div class="ttl {level}">{title}</div><div class="sub">{sub}</div></div></div></div>"""
+
+tA = THEMES["A"]
+strips = "".join([
+  strip(tA,"l1","Dashboard","Monday, 7 September 2026 · São Paulo Flagship","Dashboard"),
+  strip(tA,"l1","Products","1.248 items · 22 low stock","Products"),
+  strip(tA,"l2","Diamond Solitaire Ring 0.50 ct","Products / Rings · W18K-RG-00417","Products"),
+  strip(tA,"l2","New customer","Customers / New","Customers"),
+])
+scale_rows = [
+  ("T1","Título de módulo","Dashboard, Products, Customers, Orders, Reports","SF Pro Display","600","26 px"),
+  ("T2","Título de página interna","Detalhe de produto, cliente, pedido; cadastros e edição","SF Pro Display","600","20 px"),
+  ("T3","Título de caixa ou seção","Recent orders, Specifications, Identity, Address","SF Pro Text","600","13 px"),
+  ("T4","Rótulo em caixa alta","Cabeçalho de tabela, rótulo de KPI, rótulo de ficha","SF Pro Text","600","10 px · +0,08 em"),
+  ("V","Valor em destaque","KPI, preço, total","SF Pro Display","600","22 px"),
+  ("B","Corpo","Texto, tabela, campo, botão","SF Pro Text","400 / 600","13 px"),
+  ("S","Sublinha","Breadcrumb, data, meta abaixo do título","SF Pro Text","400","12 px"),
+  ("C","Código","SKU, pedido, certificado","SF Mono","400","11 px"),
+]
+scale = "".join(f'<tr><td><span class="tag">{k}</span></td><td><b>{n}</b></td><td style="color:var(--ink2)">{u}</td><td>{f}</td><td class="r">{w}</td><td class="r tnum">{sz}</td></tr>' for k,n,u,f,w,sz in scale_rows)
+pages.append(page(f"""
+<div class="kicker">Hierarquia</div>
+<h2>Um tamanho por nível, título sempre no mesmo lugar</h2>
+<div class="grid" style="grid-template-columns:560px minmax(0,1fr);margin-top:6px;align-items:start">
+<div class="card" style="padding:12px 16px"><table class="cmp" style="font-size:12px"><tr><th></th><th>Nível</th><th>Onde</th><th>Fonte</th><th class="r">Peso</th><th class="r">Tamanho</th></tr>{scale}</table></div>
+<div><div class="stack">{strips}<div class="guide gx"></div><div class="guide gy"></div><div class="guide gy2"></div></div>
+<div class="use" style="margin-top:8px">Linha tracejada: mesma posição do título e da sublinha nas quatro telas. Módulo em 26 px, página interna em 20 px, os dois no mesmo bloco de 32 px de altura.</div></div>
+</div>
+<div class="rec" style="max-width:100%;margin-top:12px"><b>Regra:</b> o bloco do título começa sempre a 24 px da borda do conteúdo e 20 px abaixo da barra superior. Ele tem 32 px de altura para o título e 18 px para a sublinha, em qualquer página. Avatar, preço e ações ficam à direita e nunca empurram o título. Nada acima do título além da barra superior.</div>
+""", "04"))
+
+n = 5
 for label, fn in [("Dashboard",dashboard),("Product",product),("Customer",customer),("New customer",form)]:
     for k in ("A","B"):
         t = THEMES[k]
